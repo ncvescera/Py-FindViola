@@ -1,30 +1,10 @@
 #!/usr/bin/python
 
-"""
-	print line.find('class="block_online_users  block"')
-	if line.count('class="block_online_users  block"'):	
-	#if line == "<div id=\"inst71\" class=\"block_online_users  block\" role=\"complementary\" data-block=\"online_users\" data-instanceid=\"71\" aria-labelledby=\"instance-71-header\" data-dockable=\"1\">":
-		print line
-"""	
-"""
-while exit:
-	htmlSource = sock.readline()  
-	print htmlSource 
-	if htmlSource == "</html>":
-		exit = False
-"""
-"""
-	if htmlSource[0:49] == '<div id="inst71" class="block_online_users  block"':
-		print htmlSource
-	elif htmlSource == '<span id="sb-3" class="skip-block-to"></span>':
-		break
-	"""
-
-
-
 import urllib
 import time
+
 print '-----------|',(time.strftime("%H:%M:%S")),'|-----------'                             
+
 sock = urllib.urlopen("http://moodlevolta.ictvalleumbra.it/") 
 
 lista = []
