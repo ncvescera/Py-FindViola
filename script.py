@@ -2,7 +2,11 @@
 
 import urllib
 import time
-myfile = open("people","a")
+import color_markup_string as cms
+
+myfile = open("log","a")
+data = open("data","a")
+
 while True:
 	print '-----------|',(time.strftime("%H:%M:%S")),'|-----------'                             
 	myfile.write('-----------|'+(time.strftime("%H:%M:%S"))+'|-----------\n')
@@ -19,16 +23,25 @@ while True:
 		else:
 			lista.append(line)
 			#print "Aggiunto"
-
+        nomi = []
 	for line in lista:
 		#print line
 		if line[0:20] == '<liclass="listentry"':
 			inizio = line.rindex('16')+4 #trova l'ultimo 16 e aggiunge 4 posizioni, per rendere il uttto graficamente piu' bello
 			fine = line.rindex('a')-1    #trova l'ultima a e  toglie una posizione, stessa cosa di prima		
-		
-			print line[inizio:fine]
-
-			myfile.write(line[inizio:fine]+"\n")
+		    
+                        nomi.append(line[inizio:fine])
+    
+        for nome in nomi:
+            
+            inizioStr = "<white>"
+            fineStr = "</white>"
+            if nome.find("1Q")>0 or nome.find("1R")>0:
+                inizioStr = "<red>"
+                fineStr = "</red>"
+            print cms.color(inizioStr+nome+fineStr)
+            myfile.write(nome+"\n")
+            data.write(nome[1:-1]+"\n")
 
 	print "----------------------------------"
 	myfile.write("----------------------------------\n")
@@ -38,4 +51,5 @@ while True:
                                         
 myfile.close()
 #print htmlSource
+
 
