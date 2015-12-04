@@ -42,7 +42,7 @@ for nome in nomi:
             persone.append(docente)
             #docente.stampa()
             break
-dictClassi = ["3CINF","1SPGS","5AGR","1T"]
+dictClassi = ["1A","1B","1C","1D","1E","1F","1G","1H","1L","1M","1N","1P","1Q","1R","1S","1SPGS","1T","2AC","2AGR","2AET","2AINF","2AM","2BC","2BET","2BGR","2BINF","2BM","2CET","2CINF","2CM","2DET","3AC","3BC","4AC","4BC","5AC","3AINF","3BINF","3CINF","4AINF","4BINF","4CINF","5AINF","5BINF","3AGR","3BGR","4AGR","4BGR","5BGR","3AT","4AT","5AT","3BT","4BT","5BT","3CT","3AE","4AE","5AE","3BE","4BE","3AM","4AM","5AM","3BM","4BM","5BM","3CM","4CM","3DM"] #CONTINUARE CON 3 INFORMATICHE IN POI
 for cl in dictClassi:
     qLista = []
     for persona in persone:
@@ -50,6 +50,8 @@ for cl in dictClassi:
             qLista.append(persona)
     leng = len(qLista)
     temp = qLista
+    if len(qLista) == 0:
+        continue
     news = []
     news.append(qLista[0])
     for i in range(1,leng):
@@ -58,15 +60,7 @@ for cl in dictClassi:
             if qLista[i].cognome == conf.cognome:
                 aggiungi = False
                 break
-        #print aggiungi
-        """    
-        for te in temp:
-            #aggiungi = False
-            #print aggiungi
-            if qLista[i].cognome == te.cognome:
-                aggiungi = False
-                break
-        """        
+        #print aggiungi      
         if aggiungi == True:
             news.append(qLista[i])
     cinf3 = open(cl,"w")   
