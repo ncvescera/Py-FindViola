@@ -39,6 +39,9 @@ while True:
             if nome.find("1Q")>0 or nome.find("1R")>0:
                 inizioStr = "<red>"
                 fineStr = "</red>"
+            if nome.find("d.") > 0:
+                inizioStr = "<blue>"
+                fineStr = "</blue>"
             print cms.color(inizioStr+nome+fineStr)
             myfile.write(nome+"\n")
             data.write(nome[1:-1]+"\n")
@@ -47,7 +50,7 @@ while True:
 	myfile.write("----------------------------------\n")
 
 	sock.close()
-	time.sleep(5) #5 minuti, ogni quanto moodle aggiorna le persone online
+	time.sleep(110) #5 minuti, ogni quanto moodle aggiorna le persone online
                                         
 myfile.close()
 #print htmlSource
