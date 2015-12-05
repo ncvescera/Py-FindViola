@@ -1,6 +1,7 @@
 echo "Capturing ..."
-./script.py
+cd script
+./catcher.py
 echo "Analizing ..."
-./analizer.py
+./analyzer.py
 echo "DONE"
 
