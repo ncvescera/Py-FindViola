@@ -63,6 +63,6 @@ for cl in dictClassi:
         #print aggiungi      
         if aggiungi == True:
             news.append(qLista[i])
-    cinf3 = open("../"+cl,"w")   
+    cinf3 = open("../classi/"+cl,"w")   
     for persona in news:
         cinf3.write(persona.stampa())
