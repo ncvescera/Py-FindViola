@@ -50,7 +50,7 @@ while True:
 	myfile.write("----------------------------------\n")
 
 	sock.close()
-	time.sleep(110) #5 minuti, ogni quanto moodle aggiorna le persone online
+	time.sleep(120) #5 minuti, ogni quanto moodle aggiorna le persone online
                                         
 myfile.close()
 #print htmlSource
