@@ -3,6 +3,7 @@
 import urllib
 import time
 import color_markup_string as cms
+from isAGirl import *
 
 myfile = open("log","a")
 data = open("data","a")
@@ -36,10 +37,16 @@ while True:
             
             inizioStr = "<white>"
             fineStr = "</white>"
+	    
             if nome.find("1Q")>0 or nome.find("1R")>0:
                 inizioStr = "<red>"
                 fineStr = "</red>"
-            if nome.find("d.") > 0:
+	    elif isAGirl(nome):
+		#print isAGirl(nome)
+		inizioStr = "<green>"
+		fineStr = "</green>"
+            
+	    if nome.find("d.") > 0:
                 inizioStr = "<blue>"
                 fineStr = "</blue>"
             print cms.color(inizioStr+nome+fineStr)
