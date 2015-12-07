@@ -7,7 +7,7 @@ class Persona:
         self.cognome = cognome
     def stampa(self):
         string = self.nome+" "+self.classe+" "+self.cognome
-        print  string
+        print  "[+] ",string
         return string+"\n"
 
 myfile = open("data","r")
@@ -42,7 +42,7 @@ for nome in nomi:
             persone.append(docente)
             #docente.stampa()
             break
-dictClassi = ["1A","1B","1C","1D","1E","1F","1G","1H","1L","1M","1N","1P","1Q","1R","1S","1SPGS","1T","2AC","2AGR","2AET","2AINF","2AM","2BC","2BET","2BGR","2BINF","2BM","2CET","2CINF","2CM","2DET","3AC","3BC","4AC","4BC","5AC","3AINF","3BINF","3CINF","4AINF","4BINF","4CINF","5AINF","5BINF","3AGR","3BGR","4AGR","4BGR","5BGR","3AT","4AT","5AT","3BT","4BT","5BT","3CT","3AE","4AE","5AE","3BE","4BE","3AM","4AM","5AM","3BM","4BM","5BM","3CM","4CM","3DM"] #CONTINUARE CON 3 INFORMATICHE IN POI
+dictClassi = ["1A","1B","1C","1D","1E","1F","1G","1H","1L","1M","1N","1P","1Q","1R","1S","1SPGS","1T","2AC","2AGR","2AET","2AINF","2AM","2BC","2BET","2BGR","2BINF","2BM","2CET","2CINF","2CM","2DET","3AC","3BC","4AC","4BC","5AC","3AINF","3BINF","3CINF","4AINF","4BINF","4CINF","5AINF","5BINF","3AGR","3BGR","4AGR","4BGR","5BGR","3AT","4AT","5AT","3BT","4BT","5BT","3CT","3AE","4AE","5AE","3BE","4BE","3AM","4AM","5AM","3BM","4BM","5BM","3CM","4CM","3DM","MAGISTER"] #CONTINUARE CON 3 INFORMATICHE IN POI
 for cl in dictClassi:
     qLista = []
     for persona in persone:
