@@ -15,3 +15,5 @@ Questo script genera 2 file:
 * data: che contiene tutti i nomi degli studenti
 * log: simula la schermata del terminale
 
+# scritp/analyzer.py
+Questo script prende i nomi presenti nel file data, li divide per classi e li stampa nei relativi file dentro la cartella "classi"
