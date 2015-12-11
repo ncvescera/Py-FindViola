@@ -8,7 +8,8 @@ class Persona:
         self.classe = classe
         self.cognome = cognome
     def stampa(self):
-        string = self.nome+" "+self.classe+" "+self.cognome
+        #string = self.nome+" "+self.classe+" "+self.cognome # nome+classe+cognome
+	string = self.nome+" "+self.cognome # nome+cognome
         print  "[+] ",string
         return string+"\n"
 
