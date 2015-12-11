@@ -17,3 +17,7 @@ Questo script genera 2 file:
 
 # scritp/analyzer.py
 Questo script prende i nomi presenti nel file data, li divide per classi e li stampa nei relativi file dentro la cartella "classi"
+
+#script/isAGirl.py
+E' una funzione che permette di distinguere il sesso di una persona in base al nome.<br>
+Viene invocata nel file script/catcher.py
