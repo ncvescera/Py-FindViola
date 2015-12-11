@@ -6,3 +6,4 @@ File principale che avvia l'operazione di scansione di moodle, attende un Keyboa
 
 # script/catcher.py
 Script che ogni 2 minuti fa una chiamata a moodle e stampa a video le persone online.<br>
+asdsada
