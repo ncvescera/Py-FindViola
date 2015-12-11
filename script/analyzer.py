@@ -16,7 +16,7 @@ class Persona:
 myfile = open("data","r")
 
 nomi = []
-#i = 0
+i = 0 #conta il numero di persone totali
 while True:
     n = myfile.readline()
     if n == '':
@@ -41,7 +41,7 @@ for nome in nomi:
             alunno = Persona(name,classe,cognome)
             persone.append(alunno)
             #print name+"-"+classe+"-"+cognome
-            alunno.stampa()
+            #alunno.stampa()
         elif nome.find("d.") > 0:
             numero = nome.find("d.")
             name = nome[:numero]
@@ -79,5 +79,7 @@ for cl in Persona.dictClassi:
     cinf3 = open("../classi/"+cl,"w")   
     for persona in news:
         cinf3.write(persona.stampa())
+	i = i+1
     cinf3.write(str(len(news))+"\n")
     cinf3.close()
+print "--------------------------------------------\nNumero di persone totali: ",i
