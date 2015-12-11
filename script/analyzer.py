@@ -76,4 +76,5 @@ for cl in Persona.dictClassi:
     cinf3 = open("../classi/"+cl,"w")   
     for persona in news:
         cinf3.write(persona.stampa())
+    cinf3.write(str(len(news))+"\n")
     cinf3.close()
