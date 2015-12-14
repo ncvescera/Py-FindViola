@@ -59,7 +59,9 @@ def findSurname(cognome):
             		trovato = Persona.parse(linea)
             		trovato.stampa()
 			break
-
+		if linea == '':
+			print "Errore, cognome inesistente :("
+			return 
 print "\tSeleziona il metodo di ricerca"
 print "[0] Nome\t[1] Classe\t[2] Cognome"
 valore = raw_input(': ')
