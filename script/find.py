@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-#from ClassePersona import *
+from ClassePersona import *
 
 def findName(nome):
 	pass
@@ -14,12 +14,15 @@ def findClass(src):
 		print "Errore:("
 	
 
-def findSurname(cognome):  		#usare tolower sulle stringhe di confronto
+def findSurname(cognome):#usare tolower sulle stringhe di confronto
+   	cognome = cognome.upper()
 	myfile = open("data","r")
 	while True:
 		linea = myfile.readline()
 		if linea.find(cognome) > 0:
-			print linea
+			#print linea
+            		trovato = Persona.parse(linea)
+            		trovato.stampa()
 			break
 
 print "\tSeleziona il metodo di ricerca"
