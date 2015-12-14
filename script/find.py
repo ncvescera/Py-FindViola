@@ -14,6 +14,11 @@ def findName(nome):
 				lista.append(persona)
 		else:
 			break
+
+	if len(lista) <= 0:
+		print "Errore, nome inesistente :("
+		return
+
 	news = []
 	news.append(lista[0])
 	for i in range(1,len(lista)):
