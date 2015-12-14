@@ -38,7 +38,7 @@ while True:
             inizioStr = "<white>"
             fineStr = "</white>"
 	    
-            if nome.find("1Q")>0:
+            if nome.find("1R")>0:
                 inizioStr = "<red>"
                 fineStr = "</red>"
 	    elif isAGirl(nome):

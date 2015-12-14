@@ -28,19 +28,19 @@ def findName(nome):
 			news.append(lista[i])
 	for a in news:
 		a.stampa()
-	
-		
-def findClass(src):
-	strOpen = "../classi/"+src
+			
+def findClass(classe):
+	classe = classe.upper()
+	#strOpen = "../classi/"+src.upper()
 	try:
-		myfile = open(strOpen,"r")
+		myfile = open("../classi/"+classe,"r")
 		text = myfile.read()
 		print text
 	except IOError:
 		print "Errore:("
 	
 
-def findSurname(cognome):#usare tolower sulle stringhe di confronto
+def findSurname(cognome):
    	cognome = cognome.upper()
 	myfile = open("data","r")
 	while True:
@@ -60,11 +60,7 @@ if valore == 0:
 	findName(src)
 elif valore == 1:
 	src = raw_input("Inserici la classe: ")
-	#findClass(src)
-	strOpen = "../classi/"+src
-	myfile = open(strOpen,"r")
-	text = myfile.read()
-	print text
+	findClass(src)
 elif valore == 2:
 	src = raw_input("Inserici il cognome: ")
 	findSurname(src)
