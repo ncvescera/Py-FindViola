@@ -26,19 +26,23 @@ def findName(nome):
 			#print aggiungi      
 		if aggiungi == True:
 			news.append(lista[i])
+	totale = 0
 	for a in news:
 		a.stampa()
+		totale = totale+1
+	print "-----------------------------\nPersone Trovate: ",totale
 			
 def findClass(classe):
 	classe = classe.upper()
 	#strOpen = "../classi/"+src.upper()
 	try:
 		myfile = open("../classi/"+classe,"r")
-		text = myfile.read()
-		print text
+		
 	except IOError:
-		print "Errore:("
-	
+		print "Errore, classe inesistente :("
+		return #return non ritorna niente, e' = a return none
+	text = myfile.read()
+	print text
 
 def findSurname(cognome):
    	cognome = cognome.upper()
