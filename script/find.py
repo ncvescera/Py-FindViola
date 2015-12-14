@@ -3,7 +3,33 @@
 from ClassePersona import *
 
 def findName(nome):
-	pass
+	nome = nome.upper()
+	myfile = open("data","r")	
+	lista = []
+	while True:
+		letto = myfile.readline()
+		if letto != '':
+			persona = Persona.parse(letto)
+			if persona.nome == nome:
+				lista.append(persona)
+		else:
+			break
+	news = []
+	news.append(lista[0])
+	for i in range(1,len(lista)):
+		aggiungi = True
+		for conf in news:
+			#conf.stampa()
+			if lista[i].cognome == conf.cognome:
+				aggiungi = False
+				break
+			#print aggiungi      
+		if aggiungi == True:
+			news.append(lista[i])
+	for a in news:
+		a.stampa()
+	
+		
 def findClass(src):
 	strOpen = "../classi/"+src
 	try:
