@@ -10,7 +10,7 @@ def findName(nome):
 		letto = myfile.readline()
 		if letto != '':
 			persona = Persona.parse(letto)
-			if persona.nome.find(nome) >= 0:
+			if persona.nome.find(nome,0,len(nome)) >= 0:
 				lista.append(persona)
 		else:
 			break
