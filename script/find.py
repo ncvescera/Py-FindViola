@@ -57,7 +57,7 @@ def findSurname(cognome):
     	news = Persona.confrontoPerNome(lista)
     	totale = 0
     	for p in news:
-        	p.stampa()
+        	p.stampaColor()
         	totale = totale+1
     	print "-----------------------------\nPersone Trovate: ",totale
     
