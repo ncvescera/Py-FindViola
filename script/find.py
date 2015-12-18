@@ -47,7 +47,7 @@ def findSurname(cognome):
 		linea = myfile.readline()
 		if linea != '':
 			persona = Persona.parse(linea)
-            		if persona.cognome.find(cognome) >= 0:
+            		if persona.cognome.find(cognome,0,len(cognome)) >= 0:
             			lista.append(persona)
         	else:
 			break
