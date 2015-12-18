@@ -9,6 +9,22 @@ class Persona:
 	strReturn = self.nome+" "+self.cognome # nome+cognome
         print  "[+] ",strPrint
         return strReturn+"\n"
+    
+    @staticmethod
+    def confrontoPerCognome(lista):
+        news = []
+        news.append(lista[0])
+        for i in range(1,len(lista)):
+            aggiungi = True
+            for conf in news:
+                #conf.stampa()
+                if lista[i].cognome == conf.cognome:
+                    aggiungi = False
+                    break
+                    #print aggiungi      
+            if aggiungi == True:
+                news.append(lista[i])
+        return news
     @staticmethod
     def parse(nome):
 	dizionario = ["1","2","3","4","5"]
@@ -42,3 +58,5 @@ class Persona:
 			cognome = "Utente"
 			admin = Persona(name,classe,cognome)
 			return admin
+        
+        

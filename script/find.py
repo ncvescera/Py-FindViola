@@ -19,18 +19,8 @@ def findName(nome):
 		print "Errore, nome inesistente :("
 		return
 
-	news = []
-	news.append(lista[0])
-	for i in range(1,len(lista)):
-		aggiungi = True
-		for conf in news:
-			#conf.stampa()
-			if lista[i].cognome == conf.cognome:
-				aggiungi = False
-				break
-			#print aggiungi      
-		if aggiungi == True:
-			news.append(lista[i])
+	news = Persona.confrontoPerCognome(lista)
+    
 	totale = 0
 	for a in news:
 		a.stampa()
