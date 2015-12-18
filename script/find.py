@@ -42,16 +42,25 @@ def findClass(classe):
 def findSurname(cognome):
    	cognome = cognome.upper()
 	myfile = open("data","r")
+        lista = []
 	while True:
 		linea = myfile.readline()
-		if linea.find(cognome) > 0:
-			#print linea
-            		trovato = Persona.parse(linea)
-            		trovato.stampa()
+		if linea != '':
+			persona = Persona.parse(linea)
+            		if persona.cognome.find(cognome) >= 0:
+            			lista.append(persona)
+        	else:
 			break
-		if linea == '':
-			print "Errore, cognome inesistente :("
-			return 
+    	if len(lista) <= 0:
+		print "Errore, cognome inesistente :("
+		return 
+    	news = Persona.confrontoPerNome(lista)
+    	totale = 0
+    	for p in news:
+        	p.stampa()
+        	totale = totale+1
+    	print "-----------------------------\nPersone Trovate: ",totale
+    
 print "\tSeleziona il metodo di ricerca"
 print "[0] Nome\t[1] Classe\t[2] Cognome"
 valore = raw_input(': ')

@@ -25,6 +25,23 @@ class Persona:
             if aggiungi == True:
                 news.append(lista[i])
         return news
+    
+    @staticmethod
+    def confrontoPerNome(lista):
+        news = []
+        news.append(lista[0])
+        for i in range(1,len(lista)):
+            aggiungi = True
+            for conf in news:
+                #conf.stampa()
+                if lista[i].nome == conf.nome:
+                    aggiungi = False
+                    break
+                    #print aggiungi      
+            if aggiungi == True:
+                news.append(lista[i])
+        return news
+    
     @staticmethod
     def parse(nome):
 	dizionario = ["1","2","3","4","5"]
