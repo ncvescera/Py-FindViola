@@ -23,7 +23,7 @@ def findName(nome):
     
 	totale = 0
 	for a in news:
-		a.stampa()
+		a.stampaColor()
 		totale = totale+1
 	print "-----------------------------\nPersone Trovate: ",totale
 			

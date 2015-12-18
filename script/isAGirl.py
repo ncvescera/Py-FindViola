@@ -21,7 +21,17 @@ def isAGirl(nome):
 			else:
 				return False	
 		
-	
+def isAGirlOnlyN(nome):
+    	nomiMaschili = ["LUCA","GIANLUCA","MATTIA","NICOLA","ANDREA","ELIA","ENEA"]
+    	stampa = True
+	for maschio in nomiMaschili:
+        	#print maschio
+        	if nome == maschio:
+            		stampa = False
+    	if stampa and nome[-1] == "A":
+        	return True
+    	else:
+        	return False	
 """
 a = ">ELIA2AINF_BERNACCIA<"
 if isAGirl(a):
