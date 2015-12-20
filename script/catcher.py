@@ -7,7 +7,7 @@ from isAGirl import *
 
 myfile = open("log","a")
 data = open("data","a")
-
+firstTime = True
 while True:
 	print '-----------|',(time.strftime("%H:%M:%S")),'|-----------'                             
 	myfile.write('-----------|'+(time.strftime("%H:%M:%S"))+'|-----------\n')
@@ -32,7 +32,7 @@ while True:
 			fine = line.rindex('a')-1    #trova l'ultima a e  toglie una posizione, stessa cosa di prima		
 		    
                         nomi.append(line[inizio:fine])
-    
+    	#print len(nomi)
         for nome in nomi:
             
             inizioStr = "<white>"
@@ -49,13 +49,39 @@ while True:
 	    if nome.find("d.") > 0:
                 inizioStr = "<blue>"
                 fineStr = "</blue>"
+		
             print cms.color(inizioStr+nome+fineStr)
             myfile.write(nome+"\n")
             data.write(nome[1:-1]+"\n")
-
+	
+	#print len(nomi)	
+	if firstTime == False:
+		if len(nomi) > 0:	
+			toPrint = []
+			for nome in nomi:
+				if nome.find("d.") > 0:
+					aggiungi = True
+				    	for conf in old:
+					#conf.stampa()
+				       		if nome == conf:
+					    		aggiungi = False
+					    		break
+					    #print aggiungi      
+				    	if aggiungi == True:
+				       		toPrint.append(nome[1:-1])
+				loginout = open("loginout","a")
+				for o in toPrint:
+					loginout.write(o+"\n")
+				old = nomi	
+	else:
+		old = nomi
+		loginout = open("loginout","a")
+		for a in old:
+			if a.find("d.") > 0:
+				loginout.write(a[1:-1]+"\n")
 	print "----------------------------------"
 	myfile.write("----------------------------------\n")
-
+	firstTime = False
 	sock.close()
 	time.sleep(120) #5 minuti, ogni quanto moodle aggiorna le persone online
                                         
