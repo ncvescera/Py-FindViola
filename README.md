@@ -27,8 +27,9 @@ Questo script prende i nomi presenti nel file data, li divide per classi e li sc
 
 #script/find.py
 Script che permette di cercare una persona per:
-* Nome (opzione 0): permette di filtare le persone per nome o per le prime lettere di esso
-* Classe (opzione 2): permette di filtrare le persone per classe. <br><b>N.B.</b> la classe deve essere scritta correttamente! 
+* Nome (opzione 0): permette di filtare le persone per nome o per le prime lettere di esso. Funziona solo per gli studenti ad eccezzione di una ricerca per la prima lettera!
+* Classe (opzione 1): permette di filtrare le persone per classe. <br><b>N.B.</b> la classe deve essere scritta correttamente!
+* Cognome (opzione 2): permette di filtrare le persone per cognome, come Nome.
 #script/isAGirl.py
 E' una funzione che permette di distinguere il sesso di una persona in base al nome.<br>
 Viene invocata nel file script/catcher.py
