@@ -1,11 +1,21 @@
 echo "Capturing ..."
 cd script
-./catcher.py
-echo "Analizing ..."
+##Controllo esistenza cartella classi##
 if [ ! -d ../classi ]
 	then
 		mkdir ../classi
 fi
-./analyzer.py
-echo "DONE"
+##FineControllo##
 
+./notADeamon.sh & #avvia in background lo script
+#gnome-terminal -e 
+#./catcher.py
+while :
+do
+	echo "Waiting ..."
+	sleep 3600	
+	echo "Analizing ..."
+
+	./analyzer.py
+	echo "DONE"
+done
