@@ -13,14 +13,14 @@ Script che controlla ogni ora se il file catcher.py è in esecuzione, se non è 
 # script/catcher.py
 Script che ogni 2 minuti fa una chiamata a moodle e stampa a video le persone online.<br>
 L'output presenta diversi colori che rappresentano le seguenti categorie di persone:<br>
-* ROSSO: persone appartenenti alla classe 1Q
-* VERDE: donne
-* BLU: docenti
+* <b>ROSSO</b>: persone appartenenti alla classe 1Q
+* <b>VERDE</b>: donne
+* <b>BLU</b>: docenti
 
 Questo script genera 2 file:
-* data: che contiene tutti i nomi degli studenti
-* log: simula la schermata del terminale
-* loginout: file formattato in CSV dove vi sono riportati gli accessi delle persone di classe docende (`d.`)
+* <b><i>data</i></b>: che contiene tutti i nomi degli studenti
+* <b>log</b>: simula la schermata del terminale
+* <b>loginout</b>: file formattato in CSV dove vi sono riportati gli accessi delle persone di classe docende (`d.`)
 
 # scritp/analyzer.py
 Questo script prende i nomi presenti nel file data, li divide per classi e li scrive nei relativi file dentro la cartella "classi"
