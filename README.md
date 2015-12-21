@@ -1,6 +1,6 @@
 # Py-FindViola
 Script in Python che analizza le persone online su Moodle ( Prima o poi ti troverò)
-
+NOTA: il tutto dovrebbe occupare quasi 17MB di memoria RAM.
 # Run
 `./start.sh`
 
