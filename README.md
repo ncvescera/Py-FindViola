@@ -35,3 +35,20 @@ Script che permette di cercare una persona per:
 #script/isAGirl.py
 E' una funzione che permette di distinguere il sesso di una persona in base al nome.<br>
 Viene invocata nel file script/catcher.py
+
+#script/ClassePersona.py
+Questo file contiene la clsee Persona che è formata da:
+##Attributi
+* dictClassi: dizionario con tutte le classi dell'istituto
+* nome: nome della persona
+* classe: classe a cui appartiene la persona
+* cognome: cognome della persona
+
+
+##Metodi
+* __init__: costruttore della clasee
+* stampa: metodo per stamapare a video i suoi attribti (ad eccezione di dictClassi) e ritorna una stringa con essi
+* stampaColor: metodo che distingue il sesso della persona e stampa i suoi attributi a video colorandoli
+* confrontoPerCognome: metodo static che permette di confrontare per cognome le persone di una lista tra di loro 
+* confrontoPerNome: stessa cosa di confrontoPerCognome solo con il nome
+* parse: metodo che data in input una stringa del seguente formato `>NOMECLASSE_COGNOME<` la trasforma in un oggetto Persona e lo ritorna
