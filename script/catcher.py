@@ -71,14 +71,14 @@ while True:
 				       		toPrint.append(nome[1:-1])
 				loginout = open("loginout","a")
 				for o in toPrint:
-					loginout.write(o+"\n")
+					loginout.write("d.;"+o.repalce('d.','')+";"+(time.strftime("%H:%M:%S %d/%m/%y"))+"\n")
 				old = nomi	
 	else:
 		old = nomi
 		loginout = open("loginout","a")
 		for a in old:
 			if a.find("d.") > 0:
-				loginout.write(a[1:-1]+"\n")
+				loginout.write("d.;"+a[1:-1].replace('d.','')+";"+(time.strftime("%H:%M:%S %d/%m/%y"))+"\n")
 	print "----------------------------------"
 	myfile.write("----------------------------------\n")
 	firstTime = False
