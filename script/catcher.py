@@ -9,8 +9,8 @@ myfile = open("log","a")
 data = open("data","a")
 firstTime = True
 while True:
-	print '-----------|',(time.strftime("%H:%M:%S")),'|-----------'                             
-	myfile.write('-----------|'+(time.strftime("%H:%M:%S"))+'|-----------\n')
+	print '-----------|',(time.strftime("%H:%M:%S %d/%m/%y")),'|-----------'                             
+	myfile.write('-----------|'+(time.strftime("%H:%M:%S %d/%m/%y"))+'|-----------\n')
 
 	sock = urllib.urlopen("http://moodlevolta.ictvalleumbra.it/") 
 
@@ -79,8 +79,8 @@ while True:
 		for a in old:
 			if a.find("d.") > 0:
 				loginout.write("d.;"+a[1:-1].replace('d.','')+";"+(time.strftime("%H:%M:%S %d/%m/%y"))+"\n")
-	print "----------------------------------"
-	myfile.write("----------------------------------\n")
+	print "-------------------------------------------"
+	myfile.write("-------------------------------------------\n")
 	firstTime = False
 	sock.close()
 	time.sleep(120) #5 minuti, ogni quanto moodle aggiorna le persone online
