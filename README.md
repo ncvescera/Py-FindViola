@@ -5,7 +5,7 @@ Script in Python che analizza le persone online su Moodle ( Prima o poi ti trove
 `./start.sh`
 
 # start.sh
-File principale che avvia l'operazione di scansione di moodle, attende un KeyboardInterrupt (`CTRL+C`), poi crea la cartella "classi", nel caso non fosse presente, ed infine avvia il file di analisi.
+File principale che controlla se la cartella classi esiste (in caso contrario la crea), lancia `notADeamon.sh` in background che avvia e controlla l'operazione di scansione di moodle, `catcher.py`, ed infine fa prartire il file di analisi, `analyzer.py` ogni 30 minuti.
 
 # script/catcher.py
 Script che ogni 2 minuti fa una chiamata a moodle e stampa a video le persone online.<br>
