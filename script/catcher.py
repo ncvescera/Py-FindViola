@@ -5,10 +5,15 @@ import time
 import color_markup_string as cms
 from isAGirl import *
 
-myfile = open("log","a")
-data = open("data","a")
+
 firstTime = True
 while True:
+
+	##Apertura file##
+	myfile = open("log","a")
+	data = open("data","a")
+	##------------##
+
 	print '-----------|',(time.strftime("%H:%M:%S %d/%m/%y")),'|-----------'                             
 	myfile.write('-----------|'+(time.strftime("%H:%M:%S %d/%m/%y"))+'|-----------\n')
 
@@ -82,10 +87,14 @@ while True:
 	print "-------------------------------------------"
 	myfile.write("-------------------------------------------\n")
 	firstTime = False
+	##Chiusura file##
+	myfile.close()
+	data.close()
 	sock.close()
+	##-------------##
 	time.sleep(120) #5 minuti, ogni quanto moodle aggiorna le persone online
                                         
-myfile.close()
+
 #print htmlSource
 
 
