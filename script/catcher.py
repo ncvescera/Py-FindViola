@@ -76,7 +76,7 @@ while True:
 				       		toPrint.append(nome[1:-1])
 				loginout = open("loginout","a")
 				for o in toPrint:
-					loginout.write("d.;"+o.repalce('d.','')+";"+(time.strftime("%H:%M:%S %d/%m/%y"))+"\n")
+					loginout.write("d.;"+o.replace('d.','')+";"+(time.strftime("%H:%M:%S %d/%m/%y"))+"\n")
 				old = nomi	
 	else:
 		old = nomi
@@ -90,6 +90,7 @@ while True:
 	##Chiusura file##
 	myfile.close()
 	data.close()
+    	loginout.close()
 	sock.close()
 	##-------------##
 	time.sleep(120) #5 minuti, ogni quanto moodle aggiorna le persone online
