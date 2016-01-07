@@ -74,26 +74,28 @@ while True:
 					    #print aggiungi      
 				    	if aggiungi == True:
 				       		toPrint.append(nome[1:-1])
-				loginout = open("loginout","a")
-				for o in toPrint:
-					loginout.write("d.;"+o.replace('d.','')+";"+(time.strftime("%H:%M:%S %d/%m/%y"))+"\n")
-				old = nomi	
+			loginout = open("loginout","a")
+			for o in toPrint:
+				loginout.write("d.;"+o.replace('d.','')+";"+(time.strftime("%H:%M:%S %d/%m/%y"))+"\n")
+			old = nomi	
 	else:
 		old = nomi
 		loginout = open("loginout","a")
 		for a in old:
 			if a.find("d.") > 0:
 				loginout.write("d.;"+a[1:-1].replace('d.','')+";"+(time.strftime("%H:%M:%S %d/%m/%y"))+"\n")
+		firstTime = False
+
 	print "-------------------------------------------"
 	myfile.write("-------------------------------------------\n")
-	firstTime = False
+	
 	##Chiusura file##
 	myfile.close()
 	data.close()
     	loginout.close()
 	sock.close()
 	##-------------##
-	time.sleep(120) #5 minuti, ogni quanto moodle aggiorna le persone online
+	time.sleep(120) #2 minuti, ogni quanto moodle aggiorna le persone online
                                         
 
 #print htmlSource
