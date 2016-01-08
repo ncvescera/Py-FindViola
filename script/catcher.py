@@ -65,7 +65,10 @@ while True:
 		
             print cms.color(inizioStr+nome+fineStr)
             myfile.write(nome+"\n")
-            data.write(nome[1:-1]+"\n")
+	    if nome.find("RobertoMancino")>0:
+		continue
+	    else:
+            	data.write(nome[1:-1]+"\n")
 	
 	#print len(nomi)	
 	if firstTime == False:
