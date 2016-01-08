@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+import sys
 import urllib
 import time
 import color_markup_string as cms
@@ -41,9 +42,16 @@ while True:
         for nome in nomi:
             
             inizioStr = "<white>"
-            fineStr = "</white>"
+            fineStr = "</white>"            
 	    
-            if nome.find("1R")>0:
+	    #print len(sys.argv)
+		
+	    if len(sys.argv) > 1:
+		ricerca = sys.argv[1].upper()
+	    else:
+		ricerca = "1R"	    
+
+            if nome.find(ricerca)>0:
                 inizioStr = "<red>"
                 fineStr = "</red>"
 	    elif isAGirl(nome):
