@@ -75,26 +75,42 @@ while True:
 		if len(nomi) > 0:	
 			toPrint = []
 			for nome in nomi:
-				if nome.find("d.") > 0:
+				if nome.find("d.") > 0:		
+					#print nome
 					aggiungi = True
-				    	for conf in old:
+					for conf in old:
 					#conf.stampa()
-				       		if nome == conf:
+				   		if nome == conf:
 					    		aggiungi = False
 					    		break
 					    #print aggiungi      
 				    	if aggiungi == True:
 				       		toPrint.append(nome[1:-1])
+			exitList = []
+			for vecchio in old:
+				if vecchio.find("d.") > 0:
+					#print vecchio
+					add = True
+					for confronto in nomi:
+						if vecchio == confronto:
+							add = False
+							break
+					if add == True:
+						exitList.append(vecchio[1:-1])
 			loginout = open("loginout","a")
 			for o in toPrint:
-				loginout.write("d.;"+o.replace('d.','')+";"+(time.strftime("%H:%M:%S %d/%m/%y"))+"\n")
-			old = nomi	
+				loginout.write("d.;"+o.replace('d.','')+";0;"+(time.strftime("%H:%M:%S %d/%m/%y"))+"\n")
+			for exit in exitList:
+				loginout.write("d.;"+exit.replace('d.','')+";1;"+(oldTime)+"\n")
+			old = nomi
+			oldTime = time.strftime("%H:%M:%S %d/%m/%y")	
 	else:
-		old = nomi
+		old = nomi	
+		oldTime = time.strftime("%H:%M:%S %d/%m/%y")
 		loginout = open("loginout","a")
 		for a in old:
 			if a.find("d.") > 0:
-				loginout.write("d.;"+a[1:-1].replace('d.','')+";"+(time.strftime("%H:%M:%S %d/%m/%y"))+"\n")
+				loginout.write("d.;"+a[1:-1].replace('d.','')+";0;"+(time.strftime("%H:%M:%S %d/%m/%y"))+"\n")
 		firstTime = False
 
 	print "-------------------------------------------"
