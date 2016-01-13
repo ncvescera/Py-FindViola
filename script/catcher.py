@@ -31,14 +31,22 @@ while True:
 			lista.append(line)
 			#print "Aggiunto"
         nomi = []
+        tempo = []
 	for line in lista:
 		#print line
 		if line[0:20] == '<liclass="listentry"':
+			#print line
 			inizio = line.rindex('16')+4 #trova l'ultimo 16 e aggiunge 4 posizioni, per rendere il uttto graficamente piu' bello
 			fine = line.rindex('a')-1    #trova l'ultima a e  toglie una posizione, stessa cosa di prima		
 		    
                         nomi.append(line[inizio:fine])
+			
+			inizioT = line.index('title="')+7
+			fineT = line.index('<img')-2
+			
+			tempo.append(line[inizioT:fineT])
     	#print len(nomi)
+	i = 0
         for nome in nomi:
             
             inizioStr = "<white>"
@@ -62,9 +70,15 @@ while True:
 	    if nome.find("d.") > 0:
                 inizioStr = "<blue>"
                 fineStr = "</blue>"
-		
-            print cms.color(inizioStr+nome+fineStr)
-            myfile.write(nome+"\n")
+	    
+            tab = "\t\t\t"
+	    if len(nome) > 25:
+		tab = "\t\t"
+          
+            print cms.color(inizioStr+nome+fineStr)+tab+tempo[i]
+            #print tempo[i]
+	    i = i+1
+	    myfile.write(nome+"\n")
 	    if nome.find("RobertoMancino")>0:
 		continue
 	    else:
