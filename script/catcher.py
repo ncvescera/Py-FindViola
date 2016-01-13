@@ -72,7 +72,9 @@ while True:
                 fineStr = "</blue>"
 	    
             tab = "\t\t\t"
-	    if len(nome) > 25:
+	    if len(nome) > 32:
+		tab = "\t"
+	    elif len(nome) > 25:
 		tab = "\t\t"
           
             print cms.color(inizioStr+nome+fineStr)+tab+tempo[i]
