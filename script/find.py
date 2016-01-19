@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 from ClassePersona import *
+import sys
 
 def findName(nome):
 	nome = nome.upper()
@@ -60,20 +61,31 @@ def findSurname(cognome):
         	p.stampaColor()
         	totale = totale+1
     	print "-----------------------------\nPersone Trovate: ",totale
-    
-print "\tSeleziona il metodo di ricerca"
-print "[0] Nome\t[1] Classe\t[2] Cognome"
-valore = raw_input(': ')
-valore = int(valore)
-if valore == 0:
-	src = raw_input("Inserici il nome: ")
-	findName(src)
-elif valore == 1:
-	src = raw_input("Inserici la classe: ")
-	findClass(src)
-elif valore == 2:
-	src = raw_input("Inserici il cognome: ")
-	findSurname(src)
+
+if len(sys.argv) > 1:
+    if sys.argv[1] == "-n":
+        findName(sys.argv[2])
+    elif sys.argv[1] == "-c":
+        findClass(sys.argv[2])
+    elif sys.argv[1] == "-s":
+        findSurname(sys.argv[2])
+    else:
+        print "Funzione Errata!"
 else:
-	print "Funzione Errata!"
+
+    print "\tSeleziona il metodo di ricerca"
+    print "[0] Nome\t[1] Classe\t[2] Cognome"
+    valore = raw_input(': ')
+    valore = int(valore)
+    if valore == 0:
+        src = raw_input("Inserici il nome: ")
+        findName(src)
+    elif valore == 1:
+        src = raw_input("Inserici la classe: ")
+        findClass(src)
+    elif valore == 2:
+        src = raw_input("Inserici il cognome: ")
+        findSurname(src)
+    else:
+        print "Funzione Errata!"
 
