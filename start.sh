@@ -13,8 +13,7 @@ fi
 while :
 do
         psOn=`ps -a |grep python`
-        if [ !$psOn ]
-                then
+        if [[ !$psOn ]]; then
                         ./catcher.py
         fi
         sleep 1800
