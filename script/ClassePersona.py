@@ -84,5 +84,16 @@ class Persona:
 			cognome = "Utente"
 			admin = Persona(name,classe,cognome)
 			return admin
-        
+        	elif nome.find("Coccia") > 0:
+			name = "Rita"
+			classe = "Dirigente"
+			cognome = "Coccia"
+			ritacoccia = Persona(name,classe,cognome)
+			return ritacoccia
+		elif nome.find("dente") > 0:
+			name = "Studente"
+			classe = "Studente"
+			cognome = "Studente"
+			studente = Persona(name,classe,cognome)
+			return studente
         

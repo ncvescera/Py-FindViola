@@ -24,9 +24,10 @@ def findName(nome):
     
 	totale = 0
 	for a in news:
-		a.stampaColor()
+		a.stampa()
+		print "<br>"
 		totale = totale+1
-	print "-----------------------------\nPersone Trovate: ",totale
+	print "-----------------------------<br>Persone Trovate: ",totale
 			
 def findClass(classe):
 	classe = classe.upper()
@@ -38,7 +39,8 @@ def findClass(classe):
 		print "Errore, classe inesistente :("
 		return #return non ritorna niente, e' = a return none
 	text = myfile.read()
-	print text
+	print text.replace("\n","<br>")
+	print "<br>"
 
 def findSurname(cognome):
    	cognome = cognome.upper()
@@ -58,9 +60,10 @@ def findSurname(cognome):
     	news = Persona.confrontoPerNome(lista)
     	totale = 0
     	for p in news:
-        	p.stampaColor()
+        	p.stampa()
+		print "<br>"
         	totale = totale+1
-    	print "-----------------------------\nPersone Trovate: ",totale
+    	print "-----------------------------<br>Persone Trovate: ",totale
 
 if len(sys.argv) > 1:
     if sys.argv[1] == "-n":

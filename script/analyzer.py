@@ -20,12 +20,22 @@ myfile.close()
 
 persone = []
 for nome in nomi:
+	#if nome.find("Coccia") > 0:
+	#	print "skip"
+	#	continue
+	#elif nome.find("studente")>0:
+	#	continue
+	#elif nome.find("Rosati")>0:
+	#	continue
+	#else:
 	persone.append((Persona.parse(nome)))
-
+		#print nome+" fatto"
+l = 0
 for cl in Persona.dictClassi:
     qLista = []
     for persona in persone:
-	
+	#l = l + 1
+	#print l
         if persona.classe == cl:
             qLista.append(persona)
 	    
